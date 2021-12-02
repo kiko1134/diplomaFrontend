@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomepageComponent,
-    data:{
+    data: {
       title: 'Homepage'
     }
   },

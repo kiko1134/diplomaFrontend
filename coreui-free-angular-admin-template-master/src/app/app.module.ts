@@ -38,9 +38,16 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { HomepageComponent } from './homepage/homepage.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {RouterModule} from '@angular/router';
+import {routes} from './app.routing';
 
 @NgModule({
   imports: [
+    HttpClientModule,
+    RouterModule.forRoot(routes, {useHash: false}),
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
