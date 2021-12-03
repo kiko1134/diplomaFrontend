@@ -42,6 +42,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {routes} from './app.routing';
+import { HometestComponent } from './hometest/hometest.component';
 
 @NgModule({
   imports: [
@@ -68,7 +69,8 @@ import {routes} from './app.routing';
     ...APP_CONTAINERS,
     LoginComponent,
     RegisterComponent,
-    HomepageComponent
+    HomepageComponent,
+    HometestComponent
   ],
   providers: [
     {
