@@ -46,7 +46,6 @@ class EditWorkshopProfile extends React.Component {
       workshop_description: this.state.workshop_description,
     };
     var id = sessionStorage.getItem("id");
-    console.log("workshop =>" + JSON.stringify(workshop));
 
     userService.updateWorkshop(id, workshop, () => this.props.navigate("/logged"));
 
@@ -54,8 +53,6 @@ class EditWorkshopProfile extends React.Component {
     sessionStorage.setItem("phone_number",this.state.phone_number);
     sessionStorage.setItem("workshop_address",this.state.workshop_address);
     sessionStorage.setItem("workshop_description",this.state.workshop_description);
-
-    // this.props.navigate("/logged");
   };
 
   render() {

@@ -1,7 +1,6 @@
 import React from "react";
 import userService from "../API/userService";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 class EditWorkshopProfile extends React.Component {
   constructor(props) {
@@ -26,8 +25,6 @@ class EditWorkshopProfile extends React.Component {
       service_name: this.state.service,
       price: this.state.price,
     };
-
-    console.log("user =>" + JSON.stringify(user));
 
     userService.editServiceToWorkshop(user, () =>
       this.props.navigate("/services-from-workshop")

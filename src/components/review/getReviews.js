@@ -4,7 +4,6 @@ import userService from "../API/userService";
 import "../../assets/css/getReviews.css";
 function GetServices() {
   const [reviews, setReviews] = useState([]);
-  let imageURL = "";
   useEffect(() => {
     async function DidMount() {
       const reviews = await userService.getReviews();
@@ -27,7 +26,6 @@ function GetServices() {
       style={{ backgroundColor: "grey", height: "100vh", overflow: "auto" }}
     >
       <div className="container" style={{ backgroundColor: "grey" }}>
-        {/* <div className="col-md-12" style = {{backgroundColor: "grey"}}> */}
         <div
           className="offer-dedicated-body-left"
           style={{ backgroundColor: "grey" }}
@@ -37,13 +35,6 @@ function GetServices() {
             id="pills-tabContent"
             style={{ backgroundColor: "grey" }}
           >
-            {/* <div
-                className="tab-pane fade"
-                id="pills-order-online"
-                role="tabpanel"
-                aria-labelledby="pills-order-online-tab"
-              ></div> */}
-
             <div
               className="tab-pane fade active show"
               id="pills-reviews"
@@ -84,7 +75,6 @@ function GetServices() {
                           </div>
                         </div>
                       </div>
-                      {/* <hr /> */}
                     </div>
                   ))
                 ) : (

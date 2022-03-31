@@ -32,9 +32,7 @@ function RegisterCustomer(props){
             email: state.email,
             password: state.password,
             role: "USER"
-          };
-          console.log("user =>" + JSON.stringify(user));
-      
+          };      
           userService.registerUser(user,() => navigate("/"));
           // navigate("/");
 

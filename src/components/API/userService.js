@@ -24,10 +24,8 @@ class userService {
         if (error.response) {
           toast.warning("You must login to search services");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -49,10 +47,8 @@ class userService {
         if (error.response) {
           toast.error("User Registration failed");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -70,10 +66,8 @@ class userService {
         if (error.response) {
           toast.error("Workshop Registration failed");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -93,10 +87,8 @@ class userService {
         if (error.response) {
           toast.error("Profile update failed");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -116,10 +108,8 @@ class userService {
         if (error.response) {
           toast.error("Profile update failed");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -138,10 +128,8 @@ class userService {
         if (error.response) {
           toast.error("Service was not added to workshop");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -163,10 +151,8 @@ class userService {
         if (error.response) {
           toast.error("Service edited unsuccessfully");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -216,10 +202,8 @@ class userService {
         if (error.response) {
           toast.error("Service was not added to favorites");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -238,10 +222,8 @@ class userService {
         if (error.response) {
           toast.error("Service was not successfully deleted");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -272,10 +254,8 @@ class userService {
         if (error.response) {
           toast.error("Review creation failed");
         } else if (error.request) {
-          // The request was made but no response was received
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);

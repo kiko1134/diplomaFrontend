@@ -1,7 +1,6 @@
 import React from "react";
 import userService from "../API/userService";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 class EditProfile extends React.Component {
   constructor(props) {
@@ -24,11 +23,9 @@ class EditProfile extends React.Component {
       email: this.state.email,
     };
     var id = sessionStorage.getItem("id");
-    console.log("user =>" + JSON.stringify(user));
 
     userService.updateUser(id,user, () => this.props.navigate("/logged"));
     sessionStorage.setItem("email",this.state.email);
-    // this.props.navigate("/logged");
 
   };
 

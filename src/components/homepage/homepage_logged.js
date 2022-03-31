@@ -4,12 +4,9 @@ import "../../assets/css/Article-List.css";
 import "../../assets/css/Navigation-with-Button.css";
 import "../../assets/css/Newsletter-Subscription-Form.css";
 import "../../assets/css/Registration-Form-with-Photo.css";
-// import "../assets/css/Simple-Slider.css";
-// import "../assets/css/styles.css";
 import Footer from "./footer";
-import { Link, useHistory } from "react-router-dom";
+// import { Link, useHistory } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
-import WorkshopProfile from "../profiles/workshopProfile";
 import AuthService from "../API/authService";
 import { useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
@@ -33,7 +30,6 @@ function Logged(props) {
 
   function handleChange(event) {
     setServiceId({ serviceId: event.target.value });
-    // console.log(Object.values(serviceId).toString());
   }
 
   function logoutUser(event) {
@@ -201,13 +197,6 @@ function Logged(props) {
             </Form.Select>
             <div className="mb-3"></div>
             <div className="mb-3">
-              {/* <Link
-                to={{
-                  pathname: `/search-service/${Object.values(
-                    serviceId
-                  ).toString()}`,
-                }}
-              > */}
                 <button
                   // style={{color:"#0d6efd"}}
                   className="btn btn-primary"
@@ -216,7 +205,6 @@ function Logged(props) {
                 >
                   Search
                 </button>
-              {/* </Link> */}
             </div>
           </form>
         </div>

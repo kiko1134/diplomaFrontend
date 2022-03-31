@@ -7,15 +7,9 @@ import "../../assets/css/Navigation-with-Button.css";
 import "../../assets/css/Newsletter-Subscription-Form.css";
 import "../../assets/css/Registration-Form-with-Photo.css";
 import "../../assets/css/Simple-Slider.css";
-// import userService from "../API/userService";
 import AuthService from "../API/authService";
-import { Link } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
-import Homepage from "../homepage/Homepage";
 import { useState } from "react";
-// import { useAlert } from 'react-alert';
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function Login(props) {
   let navigate = useNavigate();
@@ -34,7 +28,6 @@ function Login(props) {
 
     console.log("LoginUser =>" + JSON.stringify(user));
     AuthService.login(state.name, state.password,() => navigate("/logged"));
-    // toast.success("Login successful");
 
   }
 
@@ -96,9 +89,6 @@ function Login(props) {
             Log In
           </button>
         </div>
-        {/* <a className="forgot" href="#">
-          Forgot your email or password?
-        </a> */}
       </form>
     </section>
   );

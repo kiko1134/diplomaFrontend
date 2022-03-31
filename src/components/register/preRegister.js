@@ -7,7 +7,6 @@ import "../../assets/css/Navigation-with-Button.css";
 import "../../assets/css/Newsletter-Subscription-Form.css";
 import "../../assets/css/Registration-Form-with-Photo.css";
 import "../../assets/css/Simple-Slider.css";
-import {FiArrowLeftCircle} from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import background from "../../assets/img/dark_back.jpg";
 
@@ -22,10 +21,6 @@ const Preregister = () => {
         width: "100vw",
       }}
     >
-      {/* <a className = "btn btn-warning position-absolute top-0 start-0" 
-      style = {{textAlign: "left", marginTop:"5.8em", position: "absolute", marginLeft:"5em", borderRadius: "20px"}}
-      onClick={redirect}><h1><FiArrowLeftCircle/></h1>
-      </a> */}
       <h1
         style={{
           textAlign: "center",

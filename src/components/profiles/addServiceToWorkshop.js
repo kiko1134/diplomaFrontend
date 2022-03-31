@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import userService from "../API/userService";
-import { InputGroup, Dropdown, DropdownButton, Form } from "react-bootstrap";
+import {Form } from "react-bootstrap";
 class AddServiceToWorkshop extends React.Component {
   constructor(props) {
     super(props);
@@ -43,13 +43,7 @@ class AddServiceToWorkshop extends React.Component {
           service_name: this.state.service,
           price: this.state.price
       }
-
-      console.log("Service =>" + JSON.stringify(servicesInfo));
-
       userService.addServiceToWorkshop(servicesInfo, this.props.navigate("/workshop-profile"));
-
-      // this.props.navigate("/workshop-profile");
-
   }
 
   render() {

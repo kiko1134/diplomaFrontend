@@ -35,10 +35,8 @@ function RegisterWorkshop(props) {
       workshop_description: state.workshop_description,
       role: "WORKSHOP",
     };
-    console.log("user =>" + JSON.stringify(user));
 
     userService.registerWorkshop(user, () => navigate("/"));
-    // navigate("/");
   }
 
   function handleChange(event) {

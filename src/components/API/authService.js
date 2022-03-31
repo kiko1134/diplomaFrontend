@@ -1,8 +1,5 @@
 import axios from "axios";
-import { ThermometerHalf } from "react-bootstrap-icons";
 import { toast } from "react-toastify";
-
-const API_URL = "http://localhost:8081/v1/public/";
 
 class AuthService {
   login(username, password, navigate) {
@@ -39,10 +36,8 @@ class AuthService {
         if (error.response) {
           toast.error("Login Failed");
         } else if (error.request) {
-          // The request was made but no response was received
           toast.error("Server not responding");
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);

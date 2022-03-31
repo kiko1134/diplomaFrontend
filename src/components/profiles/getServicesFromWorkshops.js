@@ -49,12 +49,6 @@ function ServicesFromWorkshops(props) {
                 <table className="table no-wrap user-table mb-0">
                   <thead>
                     <tr>
-                      {/* <th
-                        scope="col"
-                        className="border-0 text-uppercase font-medium pl-4"
-                      >
-                        #
-                      </th> */}
                       <th
                         scope="col"
                         className="border-0 text-uppercase font-medium"
@@ -84,22 +78,20 @@ function ServicesFromWorkshops(props) {
                             <h5 className="font-medium mb-0">
                               {element.service.name}
                             </h5>
-                            {/* <span className="text-muted">Texas, Unitedd states</span> */}
                           </td>
                           <td>
                             <h5 className="text-medium mb-0">
                               {element.price}
                             </h5>
                             <br />
-                            {/* <span className="text-muted">Past : teacher</span> */}
                           </td>
                           <td>
-                            <button
+                            {/* <button
                               type="button"
                               className="btn btn-outline-info btn-circle btn-lg btn-circle ml-2 "
                             >
                               <i className="fa fa-trash"></i>
-                            </button>
+                            </button> */}
                             <button
                               type="button"
                               className="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"
@@ -113,12 +105,6 @@ function ServicesFromWorkshops(props) {
                             >
                               <i className="fa fa-edit"></i>
                             </button>
-                            {/* <button
-                              type="button"
-                              className="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"
-                            >
-                              <i className="fa fa-upload"></i>{" "}
-                            </button> */}
                           </td>
                         </tr>
                       ))

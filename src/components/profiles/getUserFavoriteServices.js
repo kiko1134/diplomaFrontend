@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import userService from "../API/userService";
 import { useEffect } from "react";
-import { toast } from "react-toastify";
-// import "../../assets/css/WorkshopServices.css"
 
 function UsersFavoriteServices(props) {
   const [favoriteServices, setFavoriteServices] = useState([]);
-  const [favServices, setFavServices] = useState([]);
 
   function parseJwt(token) {
     if (!token) {
@@ -39,7 +36,7 @@ function UsersFavoriteServices(props) {
     var obj = {
       workshop_id: currWorkshopId,
       service_id: currServiceId,
-      user_id: id
+      user_id: id,
     };
     console.log(id);
     userService.deleteFavoriteService(obj);

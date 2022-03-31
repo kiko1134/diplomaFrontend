@@ -6,11 +6,18 @@ import { useNavigate } from "react-router-dom";
 function CustomerProfile(props) {
   let navigate = useNavigate();
 
-  // function handleClickFavorites() {
-  //   navigate(
-  //     `/customer-profile/favorite-services}`
-  //   );
-  // }
+  function parseJwt(token) {
+    if (!token) {
+      return;
+    }
+    const base64Url = token.split(".")[1];
+    const base64 = base64Url.replace("-", "+").replace("_", "/");
+    return JSON.parse(window.atob(base64));
+  }
+
+  function handleClickReview() {
+    navigate("/reviews/create");
+  }
 
   function parseJwt(token) {
     if (!token) {
@@ -21,19 +28,7 @@ function CustomerProfile(props) {
     return JSON.parse(window.atob(base64));
   }
 
-
-  function handleClickReview() {
-    navigate("/reviews/create");
-  }
-
-  function parseJwt(token) {
-    if (!token) { return; }
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace('-', '+').replace('_', '/');
-    return JSON.parse(window.atob(base64));
-  }
-
-  let {sub} = parseJwt(sessionStorage.getItem("token"));
+  let { sub } = parseJwt(sessionStorage.getItem("token"));
 
   return (
     <section
@@ -84,7 +79,6 @@ function CustomerProfile(props) {
                           <button
                             href="/see-workshop-services"
                             className="btn btn-primary"
-                            // onClick={handleClickFavorites}
                           >
                             See favorite services
                           </button>

@@ -5,9 +5,7 @@ import { useState, useEffect } from "react";
 import "../../assets/css/SearchResult.css";
 
 function SearchResWorkshop(props) {
-  //   console.log(useParams());
   let serviceId = useParams().serviceId;
-  //   console.log(serviceId);
 
   const [searchedService, setSearchedService] = useState(" ");
   const [workshops, setWorkshops] = useState([]);
@@ -18,7 +16,6 @@ function SearchResWorkshop(props) {
         serviceId
       );
       setWorkshops(workshops);
-      console.log(workshops);
 
       const searchedService = await userService.getServiceNameById(serviceId);
       setSearchedService(searchedService);
@@ -27,11 +24,12 @@ function SearchResWorkshop(props) {
     DidMount();
   }, [serviceId]);
 
-//   console.log(Object.values(searchedService).toString());
-
   return (
-    <div className="" style={{  backgroundColor: "grey" , height: "100vh", overflow: "auto"}}>
-      <div class="container" style={{ backgroundColor: "grey"}}>
+    <div
+      className=""
+      style={{ backgroundColor: "grey", height: "100vh", overflow: "auto" }}
+    >
+      <div class="container" style={{ backgroundColor: "grey" }}>
         <h1 style={{ color: "white" }}>
           These are the result that we found for
         </h1>

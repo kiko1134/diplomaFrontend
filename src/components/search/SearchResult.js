@@ -5,9 +5,7 @@ import { useState, useEffect } from "react";
 import "../../assets/css/SearchResult.css";
 
 function SearchRes(props) {
-  //   console.log(useParams());
   let serviceId = useParams().serviceId;
-  //   console.log(serviceId);
 
   const [searchedService, setSearchedService] = useState(" ");
   const [workshops, setWorkshops] = useState([]);
@@ -18,7 +16,6 @@ function SearchRes(props) {
         serviceId
       );
       setWorkshops(workshops);
-      console.log(workshops);
 
       const searchedService = await userService.getServiceNameById(serviceId);
       setSearchedService(searchedService);
@@ -26,8 +23,6 @@ function SearchRes(props) {
 
     DidMount();
   }, [serviceId]);
-
-  console.log(Object.values(searchedService).toString());
 
   function handleFavorites(event, currServiceId, currWorkshopId) {
     event.preventDefault();
@@ -41,7 +36,10 @@ function SearchRes(props) {
   }
 
   return (
-    <div className="" style={{ backgroundColor: "grey" , height: "100vh", overflow: "auto"}}>
+    <div
+      className=""
+      style={{ backgroundColor: "grey", height: "100vh", overflow: "auto" }}
+    >
       <div class="container" style={{ backgroundColor: "grey" }}>
         <h1 style={{ color: "white" }}>
           These are the result that we found for
@@ -94,8 +92,17 @@ function SearchRes(props) {
                 <div class="col-sm-12 pt-5">
                   <button
                     className="btn btn-primary"
-                    onClick={(e) => {handleFavorites(e,element.service.id,element.workshop.id)}}
-                  > Add to favorites</button>
+                    onClick={(e) => {
+                      handleFavorites(
+                        e,
+                        element.service.id,
+                        element.workshop.id
+                      );
+                    }}
+                  >
+                    {" "}
+                    Add to favorites
+                  </button>
                 </div>
               </div>
             </div>

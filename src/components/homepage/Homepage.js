@@ -4,14 +4,10 @@ import "../../assets/css/Article-List.css";
 import "../../assets/css/Navigation-with-Button.css";
 import "../../assets/css/Newsletter-Subscription-Form.css";
 import "../../assets/css/Registration-Form-with-Photo.css";
-// import "../assets/css/Simple-Slider.css";
-// import "../assets/css/styles.css";
 import Footer from "./footer";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
-import WorkshopProfile from "../profiles/workshopProfile";
 import { Form } from "react-bootstrap";
-import userService from "../API/userService";
 import { toast } from "react-toastify";
 
 class Homepage extends React.Component {
@@ -23,11 +19,6 @@ class Homepage extends React.Component {
       services: [],
     };
   }
-
-//   async componentDidMount() {
-//     const services = await userService.getServices();
-//     this.setState({ services });
-//   }
 
   setService = (event) => {
     this.setState({ serviceId: event.target.value });

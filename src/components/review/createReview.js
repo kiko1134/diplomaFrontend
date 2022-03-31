@@ -17,8 +17,6 @@ function CreateReview() {
       role: sessionStorage.getItem("authorities"),
       content:Object.values(content).toString()
     };
-
-    console.log("Review =>" + JSON.stringify(obj));
     userService.createReview(obj, () => navigate('/logged'));
   }
 
