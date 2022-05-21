@@ -1,5 +1,5 @@
 import axios from "axios";
-import authHeader from "./authHeader";
+import authHeader from "./AuthHeader";
 import { toast } from "react-toastify";
 const USER_BASE_URL = "http://localhost:8081/v1/users";
 
@@ -8,7 +8,6 @@ class userService {
     return axios
       .get("http://localhost:8081/v1/workshops", { headers: authHeader() })
       .then((resp) => {
-        console.log({ resp });
         return resp.data;
       });
   }
@@ -17,7 +16,6 @@ class userService {
     return axios
       .get("http://localhost:8081/v1/service", { headers: authHeader() })
       .then((resp) => {
-        console.log({ resp });
         return resp.data;
       })
       .catch((error) => {

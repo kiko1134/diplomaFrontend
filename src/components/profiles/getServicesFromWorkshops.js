@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import userService from "../API/userService";
+import userService from "../API/UserService";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function ServicesFromWorkshops(props) {
   const [workshopServices, setWorkshopServices] = useState([]);
 
   function parseJwt(token) {
-    if (!token) { return; }
+    if (!token) { return;}
     const base64Url = token.split('.')[1];
     const base64 = base64Url.replace('-', '+').replace('_', '/');
     return JSON.parse(window.atob(base64));
@@ -73,7 +73,6 @@ function ServicesFromWorkshops(props) {
                     {workshopServices ? (
                       workshopServices.sort((a, b) => a.service.name.localeCompare(b.service.name)).map((element) => (
                         <tr>
-                          {/* <td className="pl-4">{element.service.id}</td> */}
                           <td>
                             <h5 className="font-medium mb-0">
                               {element.service.name}
@@ -86,12 +85,6 @@ function ServicesFromWorkshops(props) {
                             <br />
                           </td>
                           <td>
-                            {/* <button
-                              type="button"
-                              className="btn btn-outline-info btn-circle btn-lg btn-circle ml-2 "
-                            >
-                              <i className="fa fa-trash"></i>
-                            </button> */}
                             <button
                               type="button"
                               className="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"
@@ -103,7 +96,7 @@ function ServicesFromWorkshops(props) {
                                 );
                               }}
                             >
-                              <i className="fa fa-edit"></i>
+                              <i className="fa fa-edit"/>
                             </button>
                           </td>
                         </tr>

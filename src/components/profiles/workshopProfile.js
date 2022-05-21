@@ -20,7 +20,6 @@ function WorkshopProfile(props) {
   }
 
   let { sub } = parseJwt(sessionStorage.getItem("token"));
-  console.log(sub);
   function handleReview() {
     navigate("/reviews/create");
   }
@@ -80,14 +79,6 @@ function WorkshopProfile(props) {
                         </p>
                       </div>
                     </div>
-                    <h6>Overall</h6>
-                    <hr className="mt-0 mb-4" />
-                    <div className="row pt-1">
-                      <div className="col-6 mb-3 mx-auto">
-                        <h6>Likes</h6>
-                        <p className="text-muted">4</p>
-                      </div>
-                    </div>
                     <h6>Services</h6>
                     <hr className="mt-0 mb-4" />
                     <div className="row pt-1">
@@ -98,7 +89,6 @@ function WorkshopProfile(props) {
                       </div>
                       <div className="col-6 mb-3 mx-auto">
                         <button
-                          href="/see-workshop-services"
                           className="btn btn-primary"
                           onClick={handleClick}
                         >

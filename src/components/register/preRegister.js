@@ -1,17 +1,9 @@
 import React from "react";
-import "../../assets/bootstrap/css/bootstrap.min.css";
-import "../../assets/fonts/ionicons.min.css";
-import "../../assets/css/Article-List.css";
-import "../../assets/css/Login-Form-Dark.css";
-import "../../assets/css/Navigation-with-Button.css";
-import "../../assets/css/Newsletter-Subscription-Form.css";
-import "../../assets/css/Registration-Form-with-Photo.css";
-import "../../assets/css/Simple-Slider.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import background from "../../assets/img/dark_back.jpg";
 
 
-const Preregister = () => {
+const PreRegister = () => {
   return (
     <div
       className="inner"
@@ -64,6 +56,7 @@ const Preregister = () => {
             <Link to="/register-customer">
               <img
                 src={require("../../assets/img/customer.jpg")}
+                alt="customer"
                 style={{ width: "400px", borderRadius: "15px" }}
               />
             </Link>
@@ -90,6 +83,7 @@ const Preregister = () => {
             </h1>
             <Link to="/register-workshop">
               <img
+              alt="workshop"
                 style={{
                   textAlign: "center",
                   width: "400px",
@@ -105,4 +99,4 @@ const Preregister = () => {
     </div>
   );
 };
-export default Preregister;
+export default PreRegister;

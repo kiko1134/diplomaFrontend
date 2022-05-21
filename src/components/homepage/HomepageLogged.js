@@ -1,16 +1,13 @@
 import React from "react";
-import "../../assets/bootstrap/css/bootstrap.min.css";
 import "../../assets/css/Article-List.css";
 import "../../assets/css/Navigation-with-Button.css";
 import "../../assets/css/Newsletter-Subscription-Form.css";
-import "../../assets/css/Registration-Form-with-Photo.css";
-import Footer from "./footer";
-// import { Link, useHistory } from "react-router-dom";
+import Footer from "./Footer";
 import { Carousel } from "react-bootstrap";
-import AuthService from "../API/authService";
+import AuthService from "../API/AuthService";
 import { useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
-import userService from "../API/userService";
+import userService from "../API/UserService";
 import { useState, useEffect } from "react";
 
 function Logged(props) {
@@ -36,7 +33,6 @@ function Logged(props) {
     event.preventDefault();
     AuthService.logout();
     navigate("/");
-    console.log(sessionStorage);
   }
 
   function parseJwt(token) {
@@ -47,7 +43,6 @@ function Logged(props) {
 }
 
   let {sub} =  parseJwt(sessionStorage.getItem("token"));
-    console.log(sub);
   function handleReviews() {
     navigate("/reviews");
   }
@@ -66,7 +61,7 @@ function Logged(props) {
   }
 
   function chooseProfile() {
-    var role = sessionStorage.getItem("authorities");
+    let role = sessionStorage.getItem("authorities");
     if (role === "USER") {
       navigate("/customer-profile");
     } else {
@@ -167,7 +162,7 @@ function Logged(props) {
               style={{
                 color: "var(--bs-gray-100)",
                 fontFamily: "ABeeZee,sans-serif",
-                FontSize: "28px",
+                fontSize: "28px",
               }}
             >
               <strong>Find the best price for you</strong>
@@ -195,8 +190,15 @@ function Logged(props) {
                 <> </>
               )}
             </Form.Select>
-            <div className="mb-3"></div>
+            <div className="mb-3"/>
             <div className="mb-3">
+              {/* <Link
+                to={{
+                  pathname: `/search-service/${Object.values(
+                    serviceId
+                  ).toString()}`,
+                }}
+              > */}
                 <button
                   // style={{color:"#0d6efd"}}
                   className="btn btn-primary"
@@ -205,6 +207,7 @@ function Logged(props) {
                 >
                   Search
                 </button>
+              {/* </Link> */}
             </div>
           </form>
         </div>
@@ -233,6 +236,7 @@ function Logged(props) {
                   className="img-fluid"
                   src={require("../../assets/img/resposive_content.jpg")}
                   style={{ borderRadius: "5px", marginBottom: "22px" }}
+                  alt=""
                 />
               </a>
               <h3 className="name">Up To Date</h3>
@@ -242,7 +246,7 @@ function Logged(props) {
                   matter what
                 </strong>
               </p>
-              <a className="action" href="#"></a>
+              <a className="action" href="#"/>
             </div>
             <div className="col-sm-6 col-md-4 item">
               <a href="#">
@@ -250,6 +254,7 @@ function Logged(props) {
                   className="img-fluid"
                   src={require("../../assets/img/support.png")}
                   style={{ borderRadius: "5px" }}
+                  alt=""
                 />
               </a>
               <h3 className="name">24 Hour Support</h3>
@@ -259,7 +264,7 @@ function Logged(props) {
                   easier for every user
                 </strong>
               </p>
-              <a className="action" href="#"></a>
+              <a className="action" href="#"/>
             </div>
             <div className="col-sm-6 col-md-4 item">
               <a href="#">
@@ -271,6 +276,7 @@ function Logged(props) {
                     marginBottom: "58px",
                     marginTop: "30px",
                   }}
+                  alt=""
                 />
               </a>
               <h3 className="name">User Friendly</h3>
@@ -280,7 +286,7 @@ function Logged(props) {
                   way&nbsp;
                 </strong>
               </p>
-              <a className="action" href="#"></a>
+              <a className="action" href="#"/>
             </div>
           </div>
         </div>
@@ -327,7 +333,7 @@ function Logged(props) {
               </Carousel.Item>
             </Carousel>
           </div>
-          <p className="text-center"></p>
+          <p className="text-center"/>
         </div>
         <Footer />
       </section>

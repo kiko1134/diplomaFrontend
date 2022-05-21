@@ -1,10 +1,8 @@
 import React from "react";
-import "../../assets/bootstrap/css/bootstrap.min.css";
 import "../../assets/css/Article-List.css";
 import "../../assets/css/Navigation-with-Button.css";
 import "../../assets/css/Newsletter-Subscription-Form.css";
-import "../../assets/css/Registration-Form-with-Photo.css";
-import Footer from "./footer";
+import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
 import { Form } from "react-bootstrap";
@@ -137,18 +135,16 @@ class Homepage extends React.Component {
               method="post"
             >
               <Form.Select
-                // style={{ width: "500px", height: "45px" }}
                 style={{ width: "35rem", height: "2.8rem" }}
                 aria-label="Default select example"
                 onChange={this.setService}
               >
                 <option>Select service</option>
               </Form.Select>
-              <div className="mb-3"></div>
+              <div className="mb-3"/>
               <div className="mb-3">
                 <Link to={{ pathname: "/" }}>
                   <button
-                    // style={{color:"#0d6efd"}}
                     className="btn btn-primary"
                     type="submit"
                     onClick={this.handleSubmit}
@@ -159,7 +155,6 @@ class Homepage extends React.Component {
               </div>
             </form>
           </div>
-          {/* <section></section> */}
         </section>
         <section className="article-list">
           <div className="container">
@@ -185,6 +180,7 @@ class Homepage extends React.Component {
                     className="img-fluid"
                     src={require("../../assets/img/resposive_content.jpg")}
                     style={{ borderRadius: "5px", marginBottom: "22px" }}
+                    alt=""
                   />
                 </a>
                 <h3 className="name">Up To Date</h3>
@@ -194,7 +190,7 @@ class Homepage extends React.Component {
                     no matter what
                   </strong>
                 </p>
-                <a className="action" href="#"></a>
+                <a className="action" href="#"/>
               </div>
               <div className="col-sm-6 col-md-4 item">
                 <a href="#">
@@ -202,6 +198,7 @@ class Homepage extends React.Component {
                     className="img-fluid"
                     src={require("../../assets/img/support.png")}
                     style={{ borderRadius: "5px" }}
+                    alt=""
                   />
                 </a>
                 <h3 className="name">24 Hour Support</h3>
@@ -211,7 +208,7 @@ class Homepage extends React.Component {
                     it easier for every user
                   </strong>
                 </p>
-                <a className="action" href="#"></a>
+                <a className="action" href="#"/>
               </div>
               <div className="col-sm-6 col-md-4 item">
                 <a href="#">
@@ -223,6 +220,7 @@ class Homepage extends React.Component {
                       marginBottom: "58px",
                       marginTop: "30px",
                     }}
+                    alt=""
                   />
                 </a>
                 <h3 className="name">User Friendly</h3>
@@ -232,7 +230,7 @@ class Homepage extends React.Component {
                     friendly way&nbsp;
                   </strong>
                 </p>
-                <a className="action" href="#"></a>
+                <a className="action" href="#"/>
               </div>
             </div>
           </div>
@@ -282,7 +280,7 @@ class Homepage extends React.Component {
                 </Carousel.Item>
               </Carousel>
             </div>
-            <p className="text-center"></p>
+            <p className="text-center"/>
           </div>
           <Footer />
         </section>

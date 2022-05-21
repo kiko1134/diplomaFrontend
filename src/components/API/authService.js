@@ -26,7 +26,6 @@ class AuthService {
             "authorities",
             response.data.authorities[0].authority
           );
-          console.log(sessionStorage);
           toast.success("Login successful");
           navigate();
         }

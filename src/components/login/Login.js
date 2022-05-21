@@ -7,9 +7,11 @@ import "../../assets/css/Navigation-with-Button.css";
 import "../../assets/css/Newsletter-Subscription-Form.css";
 import "../../assets/css/Registration-Form-with-Photo.css";
 import "../../assets/css/Simple-Slider.css";
-import AuthService from "../API/authService";
+// import userService from "../API/userService";
+import AuthService from "../API/AuthService";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login(props) {
   let navigate = useNavigate();
@@ -21,12 +23,11 @@ function Login(props) {
   function loginUser(event) {
     event.preventDefault();
 
-    var user = {
+    let user = {
       name: state.name,
       password: state.password,
     };
 
-    console.log("LoginUser =>" + JSON.stringify(user));
     AuthService.login(state.name, state.password,() => navigate("/logged"));
 
   }
@@ -39,7 +40,6 @@ function Login(props) {
   return (
     <section className="login-dark">
       <form
-        // onSubmit={loginUser}
         style={{
           color: "var(--bs-yellow)",
           background: "var(--bs-gray-dark)",
@@ -49,7 +49,7 @@ function Login(props) {
         <h2 className="visually-hidden">Login Form</h2>
         <h1 style={{ textAlign: "center" }}>Log In</h1>
         <div className="illustration">
-          <i className="icon ion-ios-locked-outline"></i>
+          <i className="icon ion-ios-locked-outline"/>
         </div>
         <input
           className="form-control"
@@ -89,6 +89,9 @@ function Login(props) {
             Log In
           </button>
         </div>
+        {/* <a className="forgot" href="#">
+          Forgot your email or password?
+        </a> */}
       </form>
     </section>
   );

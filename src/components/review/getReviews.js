@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import userService from "../API/userService";
+import userService from "../API/UserService";
 import "../../assets/css/getReviews.css";
 function GetServices() {
   const [reviews, setReviews] = useState([]);
@@ -26,6 +26,7 @@ function GetServices() {
       style={{ backgroundColor: "grey", height: "100vh", overflow: "auto" }}
     >
       <div className="container" style={{ backgroundColor: "grey" }}>
+        {/* <div className="col-md-12" style = {{backgroundColor: "grey"}}> */}
         <div
           className="offer-dedicated-body-left"
           style={{ backgroundColor: "grey" }}
@@ -42,7 +43,7 @@ function GetServices() {
               aria-labelledby="pills-reviews-tab"
             >
               <div className="p-4 mb-4">
-                <h1 class="mb-1 mb-5 text-warning">Reviews</h1>
+                <h1 className="mb-1 mb-5 text-warning">Reviews</h1>
                 {reviews ? (
                   reviews.map((element) => (
                     <div className="reviews-members pt-4 pb-4 mb-4 bg-white rounded">
@@ -56,13 +57,8 @@ function GetServices() {
                         </a>
                         <div className="media-body">
                           <div className="reviews-members-header">
-                            <span className="star-rating float-right">
-                              <a href="#">
-                                <i className="icofont-ui-rating active"></i>
-                              </a>
-                            </span>
                             <h6 className="mb-1">
-                              <a class="text-black">
+                              <a className="text-black">
                                 {element.user
                                   ? element.user.account.name
                                   : element.workshop.account.name}

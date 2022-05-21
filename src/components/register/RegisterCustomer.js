@@ -1,13 +1,5 @@
 import React from "react";
-import "../../assets/bootstrap/css/bootstrap.min.css";
-import "../../assets/fonts/ionicons.min.css";
-import "../../assets/css/Article-List.css";
-import "../../assets/css/Login-Form-Dark.css";
-import "../../assets/css/Navigation-with-Button.css";
-import "../../assets/css/Newsletter-Subscription-Form.css";
-import "../../assets/css/Simple-Slider.css";
-import "../../assets/css/Registration-Form-User.css";
-import userService from "../API/userService";
+import userService from "../API/UserService";
 import background from "../../assets/img/user_reg.jpg";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
@@ -32,10 +24,9 @@ function RegisterCustomer(props){
             email: state.email,
             password: state.password,
             role: "USER"
-          };      
+          };
+      
           userService.registerUser(user,() => navigate("/"));
-          // navigate("/");
-
   }
 
   function handleChange(event){
@@ -62,7 +53,7 @@ function RegisterCustomer(props){
               borderTopLeftRadius: "17px",
               borderBottomLeftRadius: "17px",
             }}
-          ></div>
+          />
           <form
             onSubmit={registerUser}
             method="post"
@@ -113,21 +104,13 @@ function RegisterCustomer(props){
                 required=""
               />
             </div>
-            <div className="mb-3"></div>
-            <div className="mb-3">
-              <div className="form-check">
-                <label className="form-check-label">
-                  <input className="form-check-input" type="checkbox" />I agree
-                  to the license terms.
-                </label>
-              </div>
-            </div>
+            <div className="mb-3"/>
+
             <div className="mb-3">
               <button
                 className="btn btn-primary d-block w-100"
                 type="submit"
                 style={{ borderRadius: "5px" }}
-                href=""
               >
                 Sign Up
               </button>

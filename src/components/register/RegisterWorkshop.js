@@ -1,13 +1,5 @@
 import React from "react";
-import "../../assets/bootstrap/css/bootstrap.min.css";
-import "../../assets/fonts/ionicons.min.css";
-import "../../assets/css/Article-List.css";
-import "../../assets/css/Login-Form-Dark.css";
-import "../../assets/css/Navigation-with-Button.css";
-import "../../assets/css/Newsletter-Subscription-Form.css";
-import "../../assets/css/Registration-Form-with-Photo.css";
-import "../../assets/css/Simple-Slider.css";
-import userService from "../API/userService";
+import userService from "../API/UserService";
 import background from "../../assets/img/reg_back.jpg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +18,7 @@ function RegisterWorkshop(props) {
 
   function registerUser(event) {
     event.preventDefault();
-    var user = {
+    let user = {
       name: state.name,
       email: state.email,
       password: state.password,
@@ -66,7 +58,7 @@ function RegisterWorkshop(props) {
             borderTopLeftRadius: "17px",
             borderBottomLeftRadius: "17px",
           }}
-        ></div>
+        />
         <form
           onSubmit={registerUser}
           method="post"
@@ -118,7 +110,6 @@ function RegisterWorkshop(props) {
             type="tel"
             placeholder="Phone"
             name="phone_number"
-            required=""
             style={{ marginBottom: "15px", borderRadius: "5px" }}
             value={state.phone_number}
             onChange={handleChange}
@@ -134,19 +125,7 @@ function RegisterWorkshop(props) {
             onChange={handleChange}
             required=""
           />
-          <div className="mb-3"></div>
-          <div className="mb-3">
-            <div className="form-check">
-              <label className="form-check-label">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  required=""
-                />
-                I agree to the license terms.
-              </label>
-            </div>
-          </div>
+          <div className="mb-3"/>
           <div className="mb-3">
             <button
               className="btn btn-primary d-block w-100"

@@ -1,5 +1,5 @@
 import React from "react";
-import userService from "../API/userService";
+import userService from "../API/UserService";
 import { useNavigate } from "react-router-dom";
 
 class EditWorkshopProfile extends React.Component {

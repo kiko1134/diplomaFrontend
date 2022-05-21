@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import userService from "../API/userService";
+import userService from "../API/UserService";
 import { useState, useEffect } from "react";
 import "../../assets/css/SearchResult.css";
 
@@ -24,9 +24,10 @@ function SearchRes(props) {
     DidMount();
   }, [serviceId]);
 
+
   function handleFavorites(event, currServiceId, currWorkshopId) {
     event.preventDefault();
-    var obj = {
+    let obj = {
       workshop_id: currWorkshopId,
       service_id: currServiceId,
       user_id: sessionStorage.getItem("id"),
@@ -36,11 +37,8 @@ function SearchRes(props) {
   }
 
   return (
-    <div
-      className=""
-      style={{ backgroundColor: "grey", height: "100vh", overflow: "auto" }}
-    >
-      <div class="container" style={{ backgroundColor: "grey" }}>
+    <div className="" style={{ backgroundColor: "grey" , height: "100vh", overflow: "auto"}}>
+      <div className="container" style={{ backgroundColor: "grey" }}>
         <h1 style={{ color: "white" }}>
           These are the result that we found for
         </h1>
@@ -55,54 +53,46 @@ function SearchRes(props) {
         </h2>
         {workshops ? (
           workshops.map((element) => (
-            <div class="member-entry">
-              <a href="#" class="member-img">
+            <div className="member-entry">
+              <a href="#" className="member-img">
                 <img
                   src={require("../../assets/img/car-garage-auto-repair-service-workshop-station-vector-32568954.jpg")}
-                  class="img-rounded"
+                  className="img-rounded"
+                  alt="..."
                 />
               </a>
-              <div class="member-details">
+              <div className="member-details">
                 <h3>Price: {element.price}lv</h3>
                 <br />
-                <div class="row info-list">
-                  <div class="col-sm-4">
-                    <i class="fa fa-briefcase"></i>
+                <div className="row info-list">
+                  <div className="col-sm-4">
+                    <i className="fa fa-briefcase"/>
                     <h5>Workshop</h5>
                   </div>
-                  <div class="col-sm-4">
-                    <i class="fa fa-envelope"></i>
+                  <div className="col-sm-4">
+                    <i className="fa fa-envelope"/>
                     <h5>Email</h5>
                   </div>
-                  <div class="col-sm-4">
-                    <i class="fa fa-phone"></i>
+                  <div className="col-sm-4">
+                    <i className="fa fa-phone"/>
                     <h5>Phone</h5>
                   </div>
-                  <div class="clear"></div>
-                  <div class="col-sm-4">
+                  <div className="clear"/>
+                  <div className="col-sm-4">
                     <h6>{element.workshop.account.name}</h6>
                   </div>
-                  <div class="col-sm-4">
+                  <div className="col-sm-4">
                     <h6>{element.workshop.account.email}</h6>
                   </div>
-                  <div class="col-sm-4">
+                  <div className="col-sm-4">
                     <h6>{element.workshop.phone_number}</h6>
                   </div>
                 </div>
-                <div class="col-sm-12 pt-5">
+                <div className="col-sm-12 pt-5">
                   <button
                     className="btn btn-primary"
-                    onClick={(e) => {
-                      handleFavorites(
-                        e,
-                        element.service.id,
-                        element.workshop.id
-                      );
-                    }}
-                  >
-                    {" "}
-                    Add to favorites
-                  </button>
+                    onClick={(e) => {handleFavorites(e,element.service.id,element.workshop.id)}}
+                  > Add to favorites</button>
                 </div>
               </div>
             </div>

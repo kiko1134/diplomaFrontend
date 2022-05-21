@@ -1,5 +1,5 @@
 import React from "react";
-import userService from "../API/userService";
+import userService from "../API/UserService";
 import {useNavigate} from "react-router-dom";
 
 
@@ -39,13 +39,13 @@ class EditWorkshopProfile extends React.Component {
 
   saveWorkshop = (e) => {
     e.preventDefault();
-    var workshop = {
+    let workshop = {
       email: this.state.email,
       phone_number: this.state.phone_number,
       workshop_address: this.state.workshop_address,
       workshop_description: this.state.workshop_description,
     };
-    var id = sessionStorage.getItem("id");
+    let id = sessionStorage.getItem("id");
 
     userService.updateWorkshop(id, workshop, () => this.props.navigate("/logged"));
 
@@ -53,6 +53,7 @@ class EditWorkshopProfile extends React.Component {
     sessionStorage.setItem("phone_number",this.state.phone_number);
     sessionStorage.setItem("workshop_address",this.state.workshop_address);
     sessionStorage.setItem("workshop_description",this.state.workshop_description);
+
   };
 
   render() {
@@ -80,7 +81,7 @@ class EditWorkshopProfile extends React.Component {
                         value={this.state.email}
                         onChange={this.changeEmail}
                       />
-                      <label className="form-label" for="typeEmailX">
+                      <label className="form-label" htmlFor="typeEmailX">
                         Email
                       </label>
                     </div>
@@ -93,7 +94,7 @@ class EditWorkshopProfile extends React.Component {
                         value={this.state.phone_number}
                         onChange={this.changePhone}
                       />
-                      <label className="form-label" for="typeEmailX">
+                      <label className="form-label" htmlFor="typeEmailX">
                         Phone Number
                       </label>
                     </div>
@@ -106,20 +107,19 @@ class EditWorkshopProfile extends React.Component {
                         value={this.state.workshop_address}
                         onChange={this.changeAddress}
                       />
-                      <label className="form-label" for="typeEmailX">
+                      <label className="form-label" htmlFor="typeEmailX">
                         Workshop Address
                       </label>
                     </div>
 
                     <div className="form-outline form-white mb-4">
                       <textarea
-                        type="text"
                         id="typeEmailX"
                         className="form-control form-control-lg"
                         value={this.state.workshop_description}
                         onChange={this.changeDescription}
                       />
-                      <label className="form-label" for="typeEmailX">
+                      <label className="form-label" htmlFor="typeEmailX">
                         Workshop Description
                       </label>
                     </div>
